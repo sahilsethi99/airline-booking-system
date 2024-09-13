@@ -5,6 +5,8 @@ services:
     build: ./Flights-Service-master
     ports:
       - "3001:3001"
+    volumes:
+      - ./api-gateway-code:/usr/src/app
     environment:
       - PORT=3001
       - NODE_ENV=production
@@ -15,6 +17,8 @@ services:
     build: ./Flight-Booking-Service-master
     ports:
       - "3002:3002"
+     volumes:
+      - ./api-gateway-code:/usr/src/app
     environment:
       - PORT=3002
       - FLIGHT_SERVICE=http://flights-service:3001
@@ -28,6 +32,8 @@ services:
     build: ./Airline-Noti-Service-master
     ports:
       - "3003:3003"
+     volumes:
+      - ./api-gateway-code:/usr/src/app
     environment:
     - PORT=3003
     - GMAIL_PASS="ymspfdpqkgwuuema"
@@ -44,6 +50,8 @@ services:
     build: ./API_Gateway_Flights-master
     ports:
       - "3000:3000"
+    volumes:
+      - ./api-gateway-code:/usr/src/app
     environment:
     - NODE_ENV=production
     - RABBITMQ_URL=amqp://rabbitmq:5672

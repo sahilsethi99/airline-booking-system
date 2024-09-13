@@ -2,7 +2,7 @@
 FROM node
 
 # Set the working directory inside the container
-WORKDIR /developer/nodejs/flights-service
+WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to install dependencies
 ENV NODE_ENV=production
