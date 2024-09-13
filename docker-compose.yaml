@@ -17,7 +17,7 @@ services:
     build: ./Flight-Booking-Service-master
     ports:
       - "3002:3002"
-     volumes:
+    volumes:
       - ./api-gateway-code:/usr/src/app
     environment:
       - PORT=3002
@@ -32,15 +32,14 @@ services:
     build: ./Airline-Noti-Service-master
     ports:
       - "3003:3003"
-     volumes:
+    volumes:
       - ./api-gateway-code:/usr/src/app
     environment:
-    - PORT=3003
-    - GMAIL_PASS="ymspfdpqkgwuuema"
-    - GMAIL_EMAIL="indiantechmojito@gmail.com"
-    - RABBITMQ_URL=amqp://rabbitmq:5672
-    - NODE_ENV=production
-
+      - PORT=3003
+      - GMAIL_PASS="ymspfdpqkgwuuema"
+      - GMAIL_EMAIL="indiantechmojito@gmail.com"
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - NODE_ENV=production
     depends_on:
       - flight-booking-service
     networks:
@@ -53,15 +52,14 @@ services:
     volumes:
       - ./api-gateway-code:/usr/src/app
     environment:
-    - NODE_ENV=production
-    - RABBITMQ_URL=amqp://rabbitmq:5672
-    - PORT=3000
-    - SALT_ROUNDS=8
-    - JWT_SECRET='sahil-jwt-secret-21021@#'
-    - JWT_EXPIRY='1h'
-    - FLIGHT_SERVICE=http://flights-service:3001
-    - BOOKING_SERVICE=http://booking-service:3002
-
+      - NODE_ENV=production
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - PORT=3000
+      - SALT_ROUNDS=8
+      - JWT_SECRET='sahil-jwt-secret-21021@#'
+      - JWT_EXPIRY='1h'
+      - FLIGHT_SERVICE=http://flights-service:3001
+      - BOOKING_SERVICE=http://booking-service:3002
     depends_on:
       - flights-service
       - flight-booking-service
