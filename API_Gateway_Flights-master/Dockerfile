@@ -19,7 +19,7 @@ ENV BOOKING_SERVICE=http://booking-service:3002
 COPY . .
 
 RUN npm ci
-RUN cd src && npx sequelize db:create
+# RUN cd src && npx sequelize db:create
 RUN cd src && npx sequelize db:migrate
 
 # Expose the port on which your Node.js application will run
