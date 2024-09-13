@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to install dependencies
 ENV NODE_ENV=production
+ENV PORT=3001
 # Copy the rest of the Node.js project, including the node_modules directory
 COPY . .
 

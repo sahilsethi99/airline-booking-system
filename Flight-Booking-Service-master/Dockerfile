@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 ENV FLIGHT_SERVICE=http://flights-service:3001
 ENV RABBITMQ_URL=amqp://rabbitmq:5672
-
+ENV PORT=3002
 
 # Copy the rest of the Node.js project, including the node_modules directory
 COPY . .
