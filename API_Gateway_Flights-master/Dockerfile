@@ -12,14 +12,14 @@ ENV SALT_ROUNDS=8
 ENV JWT_SECRET='sahil-jwt-secret-21021@#'
 ENV JWT_EXPIRY='1h'
 ENV FLIGHT_SERVICE=http://flights-service:3001
-ENV BOOKING_SERVICE=http://booking-service:3002
+ENV BOOKING_SERVICE=http://booking-service:3002 
 
 
 # Copy the rest of the Node.js project, including the node_modules directory
 COPY . .
 
 RUN npm ci
-# RUN cd src && npx sequelize db:create
+RUN cd src && npx sequelize db:create
 RUN cd src && npx sequelize db:migrate
 
 # Expose the port on which your Node.js application will run
