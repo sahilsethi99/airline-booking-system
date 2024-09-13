@@ -4,7 +4,7 @@
   "description": "A basic started boilerplate project for node",
   "main": "index.js",
   "scripts": {
-    "dev": "npx pm2 start src/index.js"
+    "dev": "npx pm2 start src/index.js --no-daemon"
   },
   "author": "Sahil",
   "license": "ISC",
