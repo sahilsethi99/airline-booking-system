@@ -17,7 +17,7 @@
     "username": "admin",
     "password": "airline-booking-db-sahil123#",
     "database": "airline-booking-db",
-    "host": "airline-booking-db.czcys06wqm6z.ap-southeast-2.rds.amazonaws.com",
+    "host": "airline-booking-db-2.czcys06wqm6z.ap-southeast-2.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
