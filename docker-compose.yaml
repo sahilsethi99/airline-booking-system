@@ -45,14 +45,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-    - ENV NODE_ENV=production
-    - ENV RABBITMQ_URL=amqp://rabbitmq:5672
-    - ENV PORT=3000
-    - ENV SALT_ROUNDS=8
-    - ENV JWT_SECRET='sahil-jwt-secret-21021@#'
-    - ENV JWT_EXPIRY='1h'
-    - ENV FLIGHT_SERVICE=http://flights-service:3001
-    - ENV BOOKING_SERVICE=http://booking-service:3002
+    - NODE_ENV=production
+    - RABBITMQ_URL=amqp://rabbitmq:5672
+    - PORT=3000
+    - SALT_ROUNDS=8
+    - JWT_SECRET='sahil-jwt-secret-21021@#'
+    - JWT_EXPIRY='1h'
+    - FLIGHT_SERVICE=http://flights-service:3001
+    - BOOKING_SERVICE=http://booking-service:3002
 
     depends_on:
       - flights-service
