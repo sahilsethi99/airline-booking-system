@@ -22,7 +22,7 @@ services:
     environment:
       - PORT=3002
       - FLIGHT_SERVICE=http://flights-service:3001
-      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
     depends_on:
       - flights-service
     networks:
@@ -38,7 +38,7 @@ services:
       - PORT=3003
       - GMAIL_PASS="ymspfdpqkgwuuema"
       - GMAIL_EMAIL="indiantechmojito@gmail.com"
-      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
       - NODE_ENV=production
     depends_on:
       - flight-booking-service
@@ -53,7 +53,7 @@ services:
       - ./api-gateway-code:/usr/src/app
     environment:
       - NODE_ENV=production
-      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
       - PORT=3000
       - SALT_ROUNDS=8
       - JWT_SECRET='sahil-jwt-secret-21021@#'
@@ -64,14 +64,6 @@ services:
       - flights-service
       - flight-booking-service
       - airline-noti-service
-    networks:
-      - airline-network
-
-  rabbitmq:
-    image: "rabbitmq:3-management"
-    ports:
-      - "5672:5672"
-      - "15672:15672"  # RabbitMQ management UI
     networks:
       - airline-network
 

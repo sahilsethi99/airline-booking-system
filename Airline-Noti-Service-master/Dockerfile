@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 ENV GMAIL_EMAIL="indiantechmojito@gmail.com"
 ENV GMAIL_PASS="ymspfdpqkgwuuema"
-ENV RABBITMQ_URL=amqp://rabbitmq:5672
+ENV RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
 ENV PORT = 3003
 
 # Copy the rest of the Node.js project, including the node_modules directory
