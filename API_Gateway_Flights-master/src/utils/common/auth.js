@@ -13,7 +13,8 @@ function checkPassword(plainPassword, encryptedPassword) {
 
 function createToken(input) {
     try {
-        return jwt.sign(input, ServerConfig.JWT_SECRET, {expiresIn: ServerConfig.JWT_EXPIRY});
+        console.log(ServerConfig.JWT_EXPIRY);
+        return jwt.sign(input, ServerConfig.JWT_SECRET, {expiresIn: "1d"});
     } catch(error) {
         console.log(error);
         throw error;
