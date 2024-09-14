@@ -5,7 +5,7 @@ let channel, connection;
 
 async function connectQueue() {
     try {
-        connection = await amqplib.connect(RABBITMQ_URL);
+        connection = await amqplib.connect('amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj');
         channel = await connection.createChannel();
 
         await channel.assertQueue("noti-queue");
