@@ -48,8 +48,8 @@ services:
       - RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
       - PORT=3000
       - SALT_ROUNDS=8
-      - JWT_SECRET='sahil-jwt-secret-21021@#'
-      - JWT_EXPIRY='1h'
+      - JWT_SECRET="sahil-jwt-secret-21021@#"
+      - JWT_EXPIRY="1d"
       - FLIGHT_SERVICE=http://flights-service:3001
       - BOOKING_SERVICE=http://booking-service:3002
     depends_on:
