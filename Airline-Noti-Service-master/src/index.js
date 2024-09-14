@@ -1,7 +1,7 @@
 const express = require('express');
 const amqplib  = require("amqplib");
 const { EmailService } = require('./services')
-const { GMAIL_EMAIL } = require('./config/server-config');
+const {  GMAIL_RECEPEINT, GMAIL_EMAIL } = require('./config/server-config');
 const { ServerConfig, RabbitMqUrl } = require('./config');
 async function connectQueue() {
     try {
@@ -12,7 +12,7 @@ async function connectQueue() {
             console.log(`${Buffer.from(data.content)}`);
             const object = JSON.parse(`${Buffer.from(data.content)}`);
             // const object = JSON.parse(Buffer.from(data).toString());
-            await EmailService.sendEmail(GMAIL_EMAIL, object.recepientEmail, object.subject, object.text);
+            await EmailService.sendEmail("indiantechmojito@gmail.com", object.recepientEmail, object.subject, object.content);
             channel.ack(data);
         })
     } catch(error) {
