@@ -9,8 +9,8 @@ ENV NODE_ENV=production
 ENV RABBITMQ_URL=amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj
 ENV PORT=3000
 ENV SALT_ROUNDS=8
-ENV JWT_SECRET='sahil-jwt-secret-21021@#'
-ENV JWT_EXPIRY='1h'
+ENV JWT_SECRET="sahil-jwt-secret-21021@#"
+ENV JWT_EXPIRY="1h"
 ENV FLIGHT_SERVICE=http://flights-service:3001
 ENV BOOKING_SERVICE=http://booking-service:3002 
 
