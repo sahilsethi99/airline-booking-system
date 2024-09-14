@@ -5,7 +5,7 @@ const {  GMAIL_RECEPEINT, GMAIL_EMAIL } = require('./config/server-config');
 const { ServerConfig, RabbitMqUrl } = require('./config');
 async function connectQueue() {
     try {
-        const connection = await amqplib.connect('amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj');
+        const connection = await amqplib.connect("amqps://fgedqckj:xMaFzbIPrhx9VDota7aSyxuz7E6fJ7TU@vulture.rmq.cloudamqp.com/fgedqckj");
         const channel = await connection.createChannel();
         await channel.assertQueue("noti-queue");
         channel.consume("noti-queue", async (data) => {
