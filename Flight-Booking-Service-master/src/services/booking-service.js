@@ -61,7 +61,7 @@ async function makePayment(data) {
         Queue.sendData({
             recepientEmail: 'sethisahil20132013@gmail.com',
             subject: 'Flight booked',
-            text: `Booking successfully done for the booking ${data.bookingId}`
+            content: `Booking successfully done for the booking ${data.bookingId}`
         });
         await transaction.commit();
         
