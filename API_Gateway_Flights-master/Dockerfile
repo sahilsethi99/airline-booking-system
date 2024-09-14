@@ -21,6 +21,8 @@ COPY . .
 RUN npm ci
 RUN cd src && npx sequelize db:create
 RUN cd src && npx sequelize db:migrate
+RUN cd src && npx sequelize db:seed:all
+
 
 # Expose the port on which your Node.js application will run
 EXPOSE 3000
